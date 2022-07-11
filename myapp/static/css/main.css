@@ -1,0 +1,20 @@
+a.add-button{
+    font-size: 45px;
+}
+
+a.detail-button{
+    font-size: 45px;
+}
+
+.task{
+    color: black;
+}
+
+.detail-button{
+    color: grey;
+}
+
+p{
+    display: flex;
+    flex-direction: column;
+}

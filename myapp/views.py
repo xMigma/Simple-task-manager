@@ -1,15 +1,29 @@
 from django.shortcuts import render, redirect
 from .models import Task
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView  
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 # Create your views here.
-def main(request):
-    if request.method == 'POST':
-        task = Task(title=request.POST['title'],
-                    description=request.POST['description']).save()
-    return render(request, 'main.html', {'tasks': Task.objects.all()})
+class TasksList(ListView):
+    model = Task
+    context_object_name = 'tasks'
 
-def delete_task(request, id):
-    if request.method == 'POST':
-        Task.objects.get(id=id).delete()
-    return redirect('/')
-    
+class TaskCreate(CreateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('tasks')
+
+class UpdateTask(UpdateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('tasks')
+
+class DeleteTask(DeleteView):
+    model = Task
+    success_url = reverse_lazy('tasks')
+    context_object_name = 'task'
+
+
+
