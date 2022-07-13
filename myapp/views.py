@@ -26,8 +26,10 @@ class RegisterPage(FormView):
     success_url = reverse_lazy('tasks')
 
     def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+        user = form.save()
+        if user is not None:
+            login(self.request, user)
+        return super(RegisterPage, self).form_valid(form)
 
 class CustomLogoutView(LogoutView):
     next_page = reverse_lazy('login')
@@ -48,7 +50,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(TaskCreate).form_valid(form)
+        return super(TaskCreate, self).form_valid(form)
 
 class UpdateTask(LoginRequiredMixin, UpdateView):
     model = Task

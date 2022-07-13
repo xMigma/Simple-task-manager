@@ -36,3 +36,8 @@ textarea {
 .row {
     display: block;
 }
+
+.card {
+    border: None;
+    margin: None;
+}
