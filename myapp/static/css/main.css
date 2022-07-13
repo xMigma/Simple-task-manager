@@ -18,3 +18,21 @@ p{
     display: flex;
     flex-direction: column;
 }
+
+label{
+    font-size: 28px;
+}
+
+input{
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+textarea {
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.row {
+    display: block;
+}

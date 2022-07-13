@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign Up</h3>
+                </div>
+                <div class="panel-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="submit" value="Sign up" class="btn btn-success">
+                    </form> 
+                </div>
+                <a href="{% url 'login' %}">Log in</a>
+            </div>
+        </div>
+{% endblock %}
