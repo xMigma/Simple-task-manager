@@ -1,4 +1,3 @@
-from audioop import reverse
 from django.shortcuts import render, redirect
 from .models import Task
 from django.views.generic import ListView
