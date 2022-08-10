@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-q_t=qrf*ajszdv*1xrvg_=so*t*%%5855w$#f5^z0okm+(g@vs
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://migma-weather.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://simple-task-manager-production.up.railway.app']
 
 import os
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp/static')]
