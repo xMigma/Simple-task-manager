@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,11 +84,11 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'taskdb',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'secretpassword',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'RnVuczliencMMgrvfCrY',
+        'HOST': 'containers-us-west-86.railway.app',
+        'PORT': '6235',
 
     }
 }
@@ -114,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 import os
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'myapp/static'),
 ]
 
 
